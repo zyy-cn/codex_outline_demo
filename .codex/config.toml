@@ -1,0 +1,11 @@
+# Project-scoped Codex config (loaded only when you trust the repo)
+# See: https://developers.openai.com/codex/config-basic/
+
+# Prefer a coding-optimized model when available in your account.
+# model = "gpt-5.3-codex"
+
+# Non-interactive workflows generally use `approval_policy = "never"`.
+approval_policy = "never"
+
+# Restrict file writes to the workspace by default.
+sandbox = "workspace-write"

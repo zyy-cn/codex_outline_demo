@@ -1,0 +1,41 @@
+{
+  "cli": {
+    "module": "src.pipeline",
+    "flags": [
+      "--out",
+      "--seed",
+      "--n-samples",
+      "--epochs",
+      "--lr"
+    ]
+  },
+  "required_functions": [
+    "make_dataset",
+    "train_logreg",
+    "predict_proba",
+    "evaluate",
+    "run"
+  ],
+  "artifacts": {
+    "config.json": {
+      "required_keys": [
+        "seed",
+        "n_samples",
+        "epochs",
+        "lr"
+      ]
+    },
+    "model.json": {
+      "required_keys": [
+        "w",
+        "b"
+      ]
+    },
+    "metrics.json": {
+      "required_keys": [
+        "accuracy",
+        "loss"
+      ]
+    }
+  }
+}
