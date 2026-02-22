@@ -51,7 +51,7 @@ REMOTE_OUT="$REMOTE_REPO_DIR/runs/$RUN_ID"
 
 ssh "$REMOTE" "set -euo pipefail; mkdir -p '$REMOTE_REPO_DIR'; \
   if [ ! -d '$REMOTE_REPO_DIR/.git' ]; then echo 'Remote repo missing .git; clone it first.'; exit 2; fi; \
-  cd '$REMOTE_REPO_DIR'; git pull; \
+  cd '$REMOTE_REPO_DIR'; git pull --rebase --autostash; \
   python3 -m src.pipeline --out '$REMOTE_OUT' --seed 0 --n-samples 400 --epochs 100 --lr 0.2"
 
 # Fetch artifacts
